@@ -1,0 +1,25 @@
+<div class="status-chip chip-ok"><div class="chip-dot"></div>Properties analyzed</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+  <div class="r-section">
+    <div class="r-heading">Original Image</div>
+    <div class="img-tile">
+      <div class="img-lbl gold">INPUT</div>
+      <img src="data:image/png;base64,{{ result.original }}" alt="Original">
+    </div>
+  </div>
+  <div class="r-section">
+    <div class="r-heading">Image Properties</div>
+    <div class="data-tbl">
+      <div class="d-row"><div class="d-key">Rows (Height)</div><div class="d-val">{{ result.info.rows }} px</div></div>
+      <div class="d-row"><div class="d-key">Cols (Width)</div><div class="d-val">{{ result.info.cols }} px</div></div>
+      <div class="d-row"><div class="d-key">Channels</div><div class="d-val gold">{{ result.info.channels }}</div></div>
+      <div class="d-row"><div class="d-key">Resolution</div><div class="d-val">{{ result.info.resolution }}</div></div>
+      <div class="d-row"><div class="d-key">Total Pixels</div><div class="d-val">{{ result.info.total_pixels }}</div></div>
+      <div class="d-row"><div class="d-key">Total RGB Values</div><div class="d-val">{{ result.info.total_values }}</div></div>
+      <div class="d-row"><div class="d-key">Center Pixel (BGR)</div><div class="d-val">{{ result.info.sample_pixel_bgr }}</div></div>
+      <div class="d-row"><div class="d-key">Center Pixel (RGB)</div><div class="d-val mint">{{ result.info.sample_pixel_rgb }}</div></div>
+      <div class="d-row"><div class="d-key">Data Type</div><div class="d-val">{{ result.info.dtype }}</div></div>
+      <div class="d-row"><div class="d-key">Memory (uncompressed)</div><div class="d-val gold">{{ result.info.size_kb }} KB</div></div>
+    </div>
+  </div>
+</div>

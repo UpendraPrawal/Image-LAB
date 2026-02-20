@@ -1,0 +1,24 @@
+<div class="status-chip chip-ok"><div class="chip-dot"></div>Interpolation comparison ready</div>
+<div class="r-section">
+  <div class="r-heading">Center Crop Comparison (×{{ result.info.scale_factor }} zoom)</div>
+  <div class="plot-box"><img src="data:image/png;base64,{{ result.plot }}" alt="Interpolation Comparison"></div>
+</div>
+<div class="r-section">
+  <div class="r-heading">Full Scaled Images</div>
+  <div class="img-grid">
+    <div class="img-tile"><div class="img-lbl">ORIGINAL — {{ result.info.original_size }}</div><img src="data:image/png;base64,{{ result.original }}" alt="Original"></div>
+    <div class="img-tile"><div class="img-lbl coral">NEAREST NEIGHBOR</div><img src="data:image/png;base64,{{ result.nearest }}" alt="NN"></div>
+    <div class="img-tile"><div class="img-lbl gold">BILINEAR</div><img src="data:image/png;base64,{{ result.linear }}" alt="Bilinear"></div>
+    <div class="img-tile"><div class="img-lbl mint">BICUBIC</div><img src="data:image/png;base64,{{ result.cubic }}" alt="Bicubic"></div>
+    <div class="img-tile"><div class="img-lbl sky">LANCZOS4</div><img src="data:image/png;base64,{{ result.lanczos }}" alt="Lanczos"></div>
+  </div>
+</div>
+<div class="r-section">
+  <div class="r-heading">Method Reference</div>
+  <div class="data-tbl">
+    <div class="d-row"><div class="d-key"><span class="badge b-r">Nearest Neighbor</span></div><div class="d-val">Fastest · blocky at high zoom · cv2.INTER_NEAREST</div></div>
+    <div class="d-row"><div class="d-key"><span class="badge b-y">Bilinear</span></div><div class="d-val">Fast · smooth · cv2.INTER_LINEAR (OpenCV default)</div></div>
+    <div class="d-row"><div class="d-key"><span class="badge b-g">Bicubic</span></div><div class="d-val">Sharper edges · slower · cv2.INTER_CUBIC</div></div>
+    <div class="d-row"><div class="d-key"><span class="badge b-b">Lanczos4</span></div><div class="d-val">Highest quality · slowest · cv2.INTER_LANCZOS4</div></div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="status-chip chip-ok"><div class="chip-dot"></div>Geometric transformations applied</div>
+<div class="r-section">
+  <div class="r-heading">Flips</div>
+  <div class="img-grid">
+    <div class="img-tile"><div class="img-lbl">ORIGINAL</div><img src="data:image/png;base64,{{ result.original }}" alt="Original"></div>
+    <div class="img-tile"><div class="img-lbl mint">FLIP HORIZONTAL (flipCode=1)</div><img src="data:image/png;base64,{{ result.flip_h }}" alt="Flip H"></div>
+    <div class="img-tile"><div class="img-lbl coral">FLIP VERTICAL (flipCode=0)</div><img src="data:image/png;base64,{{ result.flip_v }}" alt="Flip V"></div>
+    <div class="img-tile"><div class="img-lbl lav">FLIP BOTH (flipCode=-1)</div><img src="data:image/png;base64,{{ result.flip_both }}" alt="Flip Both"></div>
+  </div>
+</div>
+<div class="r-section">
+  <div class="r-heading">Rotation</div>
+  <div class="img-grid">
+    <div class="img-tile"><div class="img-lbl gold">ROTATE 90° CLOCKWISE</div><img src="data:image/png;base64,{{ result.rot90 }}" alt="90°"></div>
+    <div class="img-tile"><div class="img-lbl sky">ROTATE {{ result.params.angle }}° (warpAffine)</div><img src="data:image/png;base64,{{ result.rotated }}" alt="Rotated"></div>
+  </div>
+</div>
+<div class="r-section">
+  <div class="r-heading">Translation & Scaling</div>
+  <div class="img-grid">
+    <div class="img-tile"><div class="img-lbl gold">TRANSLATE (tx={{ result.params.tx }}, ty={{ result.params.ty }})</div><img src="data:image/png;base64,{{ result.translated }}" alt="Translated"></div>
+    <div class="img-tile"><div class="img-lbl mint">SCALE ×{{ result.params.scale }} (OpenCV)</div><img src="data:image/png;base64,{{ result.scaled_cv }}" alt="Scaled CV"></div>
+    <div class="img-tile"><div class="img-lbl lav">SCALE ×{{ result.params.scale }} (Manual NN)</div><img src="data:image/png;base64,{{ result.scaled_manual }}" alt="Scaled Manual"></div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="status-chip chip-ok"><div class="chip-dot"></div>Transformations applied</div>
+<div class="r-section">
+  <div class="r-heading">Comparison</div>
+  <div class="plot-box"><img src="data:image/png;base64,{{ result.plot }}" alt="All Transforms"></div>
+</div>
+<div class="r-section">
+  <div class="r-heading">Individual Results</div>
+  <div class="img-grid">
+    <div class="img-tile"><div class="img-lbl">ORIGINAL</div><img src="data:image/png;base64,{{ result.original }}" alt="Original"></div>
+    <div class="img-tile"><div class="img-lbl coral">NEGATIVE (255 − pixel)</div><img src="data:image/png;base64,{{ result.negative }}" alt="Negative"></div>
+    <div class="img-tile"><div class="img-lbl gold">BRIGHTNESS +{{ result.params.brightness }}</div><img src="data:image/png;base64,{{ result.bright }}" alt="Bright"></div>
+    <div class="img-tile"><div class="img-lbl mint">CONTRAST ×{{ result.params.contrast }}</div><img src="data:image/png;base64,{{ result.contrast }}" alt="Contrast"></div>
+    <div class="img-tile"><div class="img-lbl sky">ALPHA-BETA (α={{ result.params.alpha }}, β={{ result.params.beta }})</div><img src="data:image/png;base64,{{ result.alpha_beta }}" alt="AB"></div>
+  </div>
+</div>
+<div class="r-section">
+  <div class="r-heading">Formulas</div>
+  <div class="data-tbl">
+    <div class="d-row"><div class="d-key">Negative</div><div class="d-val">output = 255 − input</div></div>
+    <div class="d-row"><div class="d-key">Brightness</div><div class="d-val">output = clip(input + {{ result.params.brightness }}, 0, 255)</div></div>
+    <div class="d-row"><div class="d-key">Contrast</div><div class="d-val">output = clip({{ result.params.contrast }} × input, 0, 255)</div></div>
+    <div class="d-row"><div class="d-key">Alpha-Beta</div><div class="d-val">output = clip({{ result.params.alpha }} × input + {{ result.params.beta }}, 0, 255)</div></div>
+  </div>
+</div>

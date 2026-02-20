@@ -1,0 +1,16 @@
+<div class="status-chip chip-ok"><div class="chip-dot"></div>Color analysis complete</div>
+<div class="r-section">
+  <div class="r-heading">Channel Decomposition</div>
+  <div class="plot-box"><img src="data:image/png;base64,{{ result.analysis_plot }}" alt="Channels"></div>
+</div>
+<div class="r-section">
+  <div class="r-heading">Intensity Statistics</div>
+  <div class="data-tbl">
+    <div class="d-row"><div class="d-key">Grayscale Mean</div><div class="d-val">{{ result.info.gray_mean }}</div></div>
+    <div class="d-row"><div class="d-key">Grayscale Std Dev</div><div class="d-val">{{ result.info.gray_std }}</div></div>
+    <div class="d-row"><div class="d-key">Red Channel Mean</div><div class="d-val"><span class="badge b-r">R {{ result.info.r_mean }}</span></div></div>
+    <div class="d-row"><div class="d-key">Green Channel Mean</div><div class="d-val"><span class="badge b-g">G {{ result.info.g_mean }}</span></div></div>
+    <div class="d-row"><div class="d-key">Blue Channel Mean</div><div class="d-val"><span class="badge b-b">B {{ result.info.b_mean }}</span></div></div>
+    <div class="d-row"><div class="d-key">R / G / B Max</div><div class="d-val"><span class="badge b-r">{{ result.info.r_max }}</span><span class="badge b-g">{{ result.info.g_max }}</span><span class="badge b-b">{{ result.info.b_max }}</span></div></div>
+  </div>
+</div>

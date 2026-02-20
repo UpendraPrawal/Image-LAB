@@ -1,0 +1,46 @@
+<div class="status-chip {% if result.info.faces_found > 0 %}chip-ok{% else %}chip-err{% endif %}">
+  <div class="chip-dot"></div>
+  {% if result.info.faces_found > 0 %}{{ result.info.faces_found }} face{% if result.info.faces_found > 1 %}s{% endif %} detected{% else %}No faces detected{% endif %}
+</div>
+<div class="r-section">
+  <div class="r-heading">Detection Result</div>
+  <div class="img-grid">
+    <div class="img-tile"><div class="img-lbl">ORIGINAL</div><img src="data:image/png;base64,{{ result.original }}" alt="Original"></div>
+    <div class="img-tile"><div class="img-lbl mint">ANNOTATED — Haar Cascade</div><img src="data:image/png;base64,{{ result.annotated }}" alt="Annotated"></div>
+  </div>
+</div>
+{% if result.faces %}
+<div class="r-section">
+  <div class="r-heading">Cropped Faces</div>
+  <div class="face-grid">
+    {% for face_b64 in result.faces %}
+    <div class="face-tile">
+      <div class="face-tile-lbl">FACE {{ forloop.counter }}</div>
+      <img src="data:image/png;base64,{{ face_b64 }}" alt="Face {{ forloop.counter }}">
+    </div>
+    {% endfor %}
+  </div>
+</div>
+<div class="r-section">
+  <div class="r-heading">Bounding Boxes</div>
+  <div class="data-tbl">
+    {% for face in result.info.face_coords %}
+    <div class="d-row"><div class="d-key">Face {{ forloop.counter }}</div><div class="d-val">x={{ face.x }}, y={{ face.y }}, w={{ face.w }}, h={{ face.h }}</div></div>
+    {% endfor %}
+  </div>
+</div>
+{% else %}
+<div class="no-face">
+  ⚠ No faces detected in this image.
+  <span>Try a clear, front-facing photo with good lighting. Haar Cascade works best with frontal faces.</span>
+</div>
+{% endif %}
+<div class="r-section">
+  <div class="r-heading">Classifier Settings</div>
+  <div class="data-tbl">
+    <div class="d-row"><div class="d-key">Classifier</div><div class="d-val">haarcascade_frontalface_default.xml</div></div>
+    <div class="d-row"><div class="d-key">Scale Factor</div><div class="d-val gold">1.1</div></div>
+    <div class="d-row"><div class="d-key">Min Neighbors</div><div class="d-val gold">5</div></div>
+    <div class="d-row"><div class="d-key">Min Face Size</div><div class="d-val">30 × 30 px</div></div>
+  </div>
+</div>

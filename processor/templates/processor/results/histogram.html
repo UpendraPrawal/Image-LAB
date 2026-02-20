@@ -1,0 +1,23 @@
+<div class="status-chip chip-ok"><div class="chip-dot"></div>Histograms computed</div>
+<div class="r-section">
+  <div class="r-heading">Histogram Plots</div>
+  <div class="plot-box"><img src="data:image/png;base64,{{ result.plot }}" alt="Histograms"></div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+  <div class="r-section">
+    <div class="r-heading">Statistics</div>
+    <div class="data-tbl">
+      <div class="d-row"><div class="d-key">Total Pixels</div><div class="d-val">{{ result.info.total_pixels }}</div></div>
+      <div class="d-row"><div class="d-key">Mean Intensity</div><div class="d-val gold">{{ result.info.mean_intensity }}</div></div>
+      <div class="d-row"><div class="d-key">Median Intensity</div><div class="d-val">{{ result.info.median_intensity }}</div></div>
+      <div class="d-row"><div class="d-key">Std Deviation</div><div class="d-val">{{ result.info.std_dev }}</div></div>
+    </div>
+  </div>
+  <div class="r-section">
+    <div class="r-heading">Original</div>
+    <div class="img-tile">
+      <div class="img-lbl gold">INPUT IMAGE</div>
+      <img src="data:image/png;base64,{{ result.original }}" alt="Original">
+    </div>
+  </div>
+</div>

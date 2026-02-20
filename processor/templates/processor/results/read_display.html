@@ -1,0 +1,22 @@
+<div class="status-chip chip-ok"><div class="chip-dot"></div>Image loaded successfully</div>
+<div class="r-section">
+  <div class="r-heading">Channel Comparison</div>
+  <div class="img-grid">
+    <div class="img-tile">
+      <div class="img-lbl gold">ORIGINAL — BGR (OpenCV default)</div>
+      <img src="data:image/png;base64,{{ result.original }}" alt="BGR">
+    </div>
+    <div class="img-tile">
+      <div class="img-lbl mint">CONVERTED — RGB</div>
+      <img src="data:image/png;base64,{{ result.rgb }}" alt="RGB">
+    </div>
+  </div>
+</div>
+<div class="r-section">
+  <div class="r-heading">Image Metadata</div>
+  <div class="data-tbl">
+    <div class="d-row"><div class="d-key">Shape (BGR array)</div><div class="d-val">{{ result.info.shape_bgr }}</div></div>
+    <div class="d-row"><div class="d-key">Shape (RGB array)</div><div class="d-val">{{ result.info.shape_rgb }}</div></div>
+    <div class="d-row"><div class="d-key">Data type</div><div class="d-val gold">{{ result.info.dtype }}</div></div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="status-chip chip-ok"><div class="chip-dot"></div>Thresholding complete</div>
+<div class="r-section">
+  <div class="r-heading">Histogram with Threshold Markers</div>
+  <div class="plot-box"><img src="data:image/png;base64,{{ result.plot }}" alt="Thresholds"></div>
+</div>
+<div class="r-section">
+  <div class="r-heading">Thresholded Images</div>
+  <div class="img-grid">
+    <div class="img-tile"><div class="img-lbl">ORIGINAL</div><img src="data:image/png;base64,{{ result.original }}" alt="Original"></div>
+    <div class="img-tile"><div class="img-lbl sky">GRAYSCALE</div><img src="data:image/png;base64,{{ result.gray }}" alt="Gray"></div>
+    <div class="img-tile"><div class="img-lbl coral">MANUAL (T={{ result.info.manual_threshold }})</div><img src="data:image/png;base64,{{ result.manual }}" alt="Manual"></div>
+    <div class="img-tile"><div class="img-lbl mint">OTSU AUTO (T={{ result.info.otsu_threshold }})</div><img src="data:image/png;base64,{{ result.otsu }}" alt="Otsu"></div>
+    <div class="img-tile"><div class="img-lbl lav">ADAPTIVE GAUSSIAN</div><img src="data:image/png;base64,{{ result.adaptive }}" alt="Adaptive"></div>
+  </div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+  <div class="r-section">
+    <div class="r-heading">Threshold Values</div>
+    <div class="data-tbl">
+      <div class="d-row"><div class="d-key">Manual Threshold</div><div class="d-val coral">{{ result.info.manual_threshold }}</div></div>
+      <div class="d-row"><div class="d-key">Otsu Threshold</div><div class="d-val mint">{{ result.info.otsu_threshold }}</div></div>
+    </div>
+  </div>
+  <div class="r-section">
+    <div class="r-heading">5×5 Sample Matrix (center)</div>
+    <div class="mx-wrap">
+      <div class="mx-lbl">GRAYSCALE VALUES</div>
+      <table class="mx">
+        {% for row in result.info.sample_matrix %}<tr>{% for v in row %}<td>{{ v }}</td>{% endfor %}</tr>{% endfor %}
+      </table>
+      <div class="mx-lbl" style="margin-top:12px">AFTER THRESHOLD (T={{ result.info.manual_threshold }})</div>
+      <table class="mx threshed">
+        {% for row in result.info.sample_thresholded %}<tr>{% for v in row %}<td class="{% if v > 0 %}on{% endif %}">{{ v }}</td>{% endfor %}</tr>{% endfor %}
+      </table>
+    </div>
+  </div>
+</div>
