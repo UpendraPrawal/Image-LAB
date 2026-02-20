@@ -1,12 +1,7 @@
 <div align="center">
-<pre>
-██╗███╗   ███╗ █████╗  ██████╗ ███████╗ ██╗      █████╗ ██████╗
-██║████╗ ████║██╔══██╗██╔════╝ ██╔════╝ ██║     ██╔══██╗██╔══██╗
-██║██╔████╔██║███████║██║  ███╗█████╗   ██║     ███████║██████╔╝
-██║██║╚██╔╝██║██╔══██║██║   ██║██╔══╝   ██║     ██╔══██║██╔══██╗
-██║██║ ╚═╝ ██║██║  ██║╚██████╔╝███████╗ ███████╗██║  ██║██████╔╝
-╚═╝╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝ ╚══════╝╚═╝  ╚═╝╚═════╝
-</pre>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,100:003366&height=120&text=IMAGE%20LAB&fontSize=70&fontColor=00f7ff&animation=fadeIn&fontAlignY=55&stroke=00f7ff&strokeWidth=1" />
+
 
 ### *A full-stack Computer Vision Workbench powered by Django & OpenCV*
 
