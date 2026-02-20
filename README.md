@@ -33,9 +33,13 @@
 </div>
 
 ---
+## 🌍 Live Demo
 
+👉 **Try ImageLab Online:**  
+https://image-lab-2k6x.onrender.com
 <br/>
 
+---
 ## ✨ Overview
 
 **ImageLab** is a fully software-based, browser-accessible image processing workbench. Upload any image, choose from **9 operation categories** and **30+ processing techniques**, tune parameters with live sliders, and explore rich visual results — histograms, side-by-side comparisons, annotated outputs, and data tables — all in your browser.
