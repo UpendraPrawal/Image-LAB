@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: image-lab
+    runtime: python
+    buildCommand: "bash build.sh"
+    startCommand: "gunicorn image_lab.wsgi:application"
+    autoDeploy: true
+    envVars:
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      - key: DJANGO_DEBUG
+        value: "False"
+      - key: DJANGO_ALLOWED_HOSTS
+        value: ".onrender.com"
